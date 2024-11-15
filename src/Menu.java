@@ -10,18 +10,19 @@ public class Menu {
         this.jocDaus = jocDaus;
     }
 
+    int opcio=0;
+
     public void menuPrincipal(){
         System.out.println("Bienvenid@, elija el juego que le gustaria jugar");
         System.out.println("1: Daus");
         System.out.println("2: Parxís");
         System.out.println("3: Tic Tac Toe");
         System.out.println("-1: exit");
-    }
 
-    public void menuJoc(){
-        int opcionJoc= sc.nextInt();
-        while(true){
-            switch (opcionJoc){
+        opcio=sc.nextInt();
+        sc.nextLine();
+
+            switch (opcio){
                 case 1:
                     menuDaus();
                     break;
@@ -34,27 +35,30 @@ public class Menu {
                 default:
                     System.exit(-1);
             }
-        }
-    }
-
-    public void opcioDaus(){
-        System.out.println("1: tirar");
-        System.out.println("2: acabar joc");
 
     }
 
     public void menuDaus(){
-        int opcionDaus= sc.nextInt();
-        switch (opcionDaus){
-            case 1:
-                jocDaus.jugar();
-                break;
-            case 2:
-                menuPrincipal();
-            default:
-                System.exit(-1);
+        System.out.println("1: tirar");
+        System.out.println("2: acabar joc");
+        opcio=sc.nextInt();
+        sc.nextLine();
 
+        while(true){
+            opcio=sc.nextInt();
+            sc.nextLine();
+            switch (opcio) {
+                case 1:
+                    jocDaus.jugar();
+                    break;
+                case 2:
+                    jocDaus.resultadoGanar();
+                    jocDaus.resultadoPerder();
+                    break;
+                default:
+                    System.exit(-1);
+            }
         }
-
     }
+
 }
