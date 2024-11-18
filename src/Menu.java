@@ -39,26 +39,27 @@ public class Menu {
     }
 
     public void menuDaus(){
-        System.out.println("1: tirar");
-        System.out.println("2: acabar joc");
-        opcio=sc.nextInt();
-        sc.nextLine();
-
-        while(true){
+        do {
+            System.out.println("1: tirar");
+            System.out.println("2: acabar joc");
             opcio=sc.nextInt();
+            if(opcio== 1 || opcio==2 || opcio==-1){
             sc.nextLine();
-            switch (opcio) {
-                case 1:
-                    jocDaus.jugar();
-                    break;
-                case 2:
-                    jocDaus.resultadoGanar();
-                    jocDaus.resultadoPerder();
-                    break;
-                default:
-                    System.exit(-1);
+                switch (opcio) {
+                    case 1:
+                        jocDaus.jugar();
+                        break;
+                    case 2:
+                        jocDaus.resultadoGanar();
+                        jocDaus.resultadoPerder();
+                        break;
+                    default:
+                        System.exit(-1);
+                }
+            }else{
+                System.out.println("El parametro introduccido no es el adecuado");
             }
-        }
+        }while(opcio !=2);
     }
 
 }

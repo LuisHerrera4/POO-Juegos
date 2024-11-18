@@ -1,16 +1,24 @@
 public class JocDaus {
     private int ganar;
     private int perder;
-    Dau dau1= new Dau();;
-    Dau dau2= new Dau();;
-    Dau dau3= new Dau();;
+    Dau dau1;
+    Dau dau2;
+    Dau dau3;
 
     public JocDaus() {
-        this.dau1 = dau1;
-        this.dau2 = dau2;
-        this.dau3 = dau3;
+        this.dau1 = new Dau();
+        this.dau2 = new Dau();
+        this.dau3 = new Dau();
         this.ganar= 0;
         this.perder=0;
+    }
+
+    public int getGanar() {
+        return ganar;
+    }
+
+    public int getPerder() {
+        return perder;
     }
 
     public int jugar(){
@@ -29,22 +37,22 @@ public class JocDaus {
     }
 
     public void resultadoGanar(){
-        if(ganar==0){
+        if(getGanar() ==0){
             System.out.println("No has ganado ninguna vez");
-        } else if (ganar ==1) {
+        } else if (getGanar() ==1) {
             System.out.println("Has ganado 1 vez");
-        } else if (ganar > 1) {
-            System.out.println("Has ganado " + ganar+ " veces" );
+        } else if (getGanar() > 1) {
+            System.out.println("Has ganado " + getGanar() + " veces" );
         }
     }
 
     public void resultadoPerder(){
-        if(perder==0){
+        if(getPerder()==0){
             System.out.println("No has perdido ninguna vez");
-        } else if (perder ==1) {
+        } else if (getPerder() ==1) {
             System.out.println("Has perdido 1 vez");
-        } else if (perder > 1) {
-            System.out.println("Has perdido " + perder + " veces" );
+        } else if (getPerder() > 1) {
+            System.out.println("Has perdido " + getPerder() + " veces" );
         }
     }
 
